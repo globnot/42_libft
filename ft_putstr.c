@@ -6,13 +6,13 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 11:16:08 by aborda            #+#    #+#             */
-/*   Updated: 2025/07/31 12:38:28 by aborda           ###   ########.fr       */
+/*   Updated: 2025/07/31 15:51:54 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char *str)
+void	ft_putstr(char const *str)
 {
 	int	i;
 

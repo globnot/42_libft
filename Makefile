@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/30 16:04:27 by aborda            #+#    #+#              #
-#    Updated: 2025/07/31 11:21:02 by aborda           ###   ########.fr        #
+#    Updated: 2025/07/31 15:58:19 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRC	=			ft_strlen.c \
 					ft_putchar.c \
 					ft_putstr.c \
 					ft_putnbr.c \
+					ft_swapint.c \
 
 OBJ	=			${SRC:.c=.o}
 

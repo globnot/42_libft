@@ -6,15 +6,15 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 18:47:59 by aborda            #+#    #+#             */
-/*   Updated: 2025/07/30 19:01:46 by aborda           ###   ########.fr       */
+/*   Updated: 2025/07/31 16:05:14 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+int	ft_strlen(char const *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
