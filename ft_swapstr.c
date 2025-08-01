@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_swapstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/30 18:45:41 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/01 11:00:54 by aborda           ###   ########.fr       */
+/*   Created: 2025/07/31 15:53:40 by aborda            #+#    #+#             */
+/*   Updated: 2025/08/01 11:00:38 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
+void	ft_swapstr(char **s1, char **s2)
+{
+	int	temp;
 
-# define FT_INT_MAX 2147483647
-# define FT_INT_MIN -2147483648
-
-int		ft_strlen(char const *str);
-void	ft_putchar(char c);
-void	ft_putstr(char const *str);
-void	ft_putnbr(int nb);
-void	ft_swapint(int *a, int *b);
-void	ft_swapstr(char **s1, char **s2);
-
-#endif
+	temp = *s1;
+	*s1 = *s2;
+	*s2 = temp;
+}
