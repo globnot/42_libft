@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 18:45:41 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/01 12:24:36 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/01 13:05:58 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ void		ft_putstr(char const *str);
 void		ft_putnbr(int nb);
 void		ft_swapint(int *a, int *b);
 void		ft_swapstr(char **s1, char **s2);
-char		*ft_strcpy(char *dest, char *src);
+char		*ft_strdup(char *src);
 
 #endif
