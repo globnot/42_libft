@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/30 18:47:59 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/01 12:23:50 by aborda           ###   ########.fr       */
+/*   Created: 2025/08/01 11:42:58 by aborda            #+#    #+#             */
+/*   Updated: 2025/08/01 12:24:50 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char const *str)
+char	*ft_strcpy(char *dest, char *src)
 {
-	size_t	i;
+	unsigned int 
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
 }
