@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 18:45:41 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/02 12:33:29 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/02 12:37:07 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int			ft_isdigit(int c);
 int			ft_isalnum(int c);
 int			ft_isprint(int c);
 int			ft_isspace(int c);
+int			ft_atoi(const char *s);
 
 #endif

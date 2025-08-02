@@ -1,20 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/02 12:21:01 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/02 13:28:53 by aborda           ###   ########.fr       */
+/*   Created: 2025/08/02 12:37:25 by aborda            #+#    #+#             */
+/*   Updated: 2025/08/02 13:28:07 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int c)
+int	ft_atoi(const char *s)
 {
-	if ((c >= 9 && c <= 13) || c == 32)
-		return (1);
+	int	i;
+	int	sign;
+	int	result;
+
+	i = 0;
+	sign = 1;
+	result = 0;
+	while (ft_isspace(s[i]))
+		i++;
+	if (s[i] == '+' || s[i] == '-')
+	{
+		if (s[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	if (ft_isdigit(s[i]))
+	{
+		while (ft_isdigit(s[i]))
+		{
+			result = result * 10 + (s[i] - '0');
+			i++;
+		}
+		return (result * sign);
+	}
 	return (0);
 }
