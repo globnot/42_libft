@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/30 16:04:27 by aborda            #+#    #+#              #
-#    Updated: 2025/08/01 13:06:48 by aborda           ###   ########.fr        #
+#    Updated: 2025/08/02 10:56:02 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,9 @@ SRC	=			ft_strlen.c \
 				ft_swapint.c \
 				ft_swapstr.c \
 				ft_strdup.c \
+				ft_isalpha_lower.c \
+				ft_isalpha_upper.c \
+
 
 OBJ	=			${SRC:.c=.o}
 
@@ -41,6 +44,11 @@ fclean:			clean
 				rm -f $(NAME)
 
 re:				fclean all
+
+reclean:
+				$(MAKE) fclean
+				$(MAKE) all
+				$(MAKE) clean
 
 debug:			fclean
 				$(MAKE) CFLAGS="$(CFLAGS) $(DEBUGFLAGS)" allclean

@@ -6,20 +6,20 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 11:16:08 by aborda            #+#    #+#             */
-/*   Updated: 2025/07/31 15:51:54 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/01 17:15:00 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *str)
+void	ft_putstr(char *s)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (s[i])
 	{
-		write(1, &str[i], 1);
+		write(1, &s[i], 1);
 		i++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 18:45:41 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/01 13:05:58 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/02 10:34:22 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@
 # define FT_INT_MAX 2147483647
 # define FT_INT_MIN -2147483648
 
-size_t		ft_strlen(char const *str);
+size_t		ft_strlen(const char *s);
 void		ft_putchar(char c);
-void		ft_putstr(char const *str);
+void		ft_putstr(char *s);
 void		ft_putnbr(int nb);
 void		ft_swapint(int *a, int *b);
 void		ft_swapstr(char **s1, char **s2);
-char		*ft_strdup(char *src);
+char		*ft_strdup(const char *s);
+int			ft_isalpha_lower(char c);
+int			ft_isalpha_upper(char c);
 
 #endif

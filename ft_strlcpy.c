@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/01 11:42:58 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/01 17:24:07 by aborda           ###   ########.fr       */
+/*   Created: 2025/08/01 17:20:51 by aborda            #+#    #+#             */
+/*   Updated: 2025/08/01 17:28:12 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+size_t	ft_strlcpy(char *dest, char *src, size_t destsize)
 {
-	size_t	len;
-	char	*dest;
-	int		i;
+	size_t i;
 
-	len = ft_strlen(s);
-	dest = malloc(sizeof(char *) * len + 1);
-	if (dest == NULL)
-		return NULL;
 	i = 0;
-	while (s[i])
+	if (destsize > 0)
 	{
-		dest[i] = s[i];
-		i++;
+		while (i < destsize - 1 && src[i])
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (ft_strlen(src));
 }
