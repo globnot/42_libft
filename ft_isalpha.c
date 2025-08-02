@@ -6,13 +6,15 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 11:00:24 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/02 11:03:30 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/02 11:13:30 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isalpha(char c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	if (ft_isalpha_lower(c) || ft_isalpha_upper(c))
 		return (1);
 	return (0);
 }
