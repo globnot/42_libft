@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/30 16:04:27 by aborda            #+#    #+#              #
-#    Updated: 2025/08/02 11:54:11 by aborda           ###   ########.fr        #
+#    Updated: 2025/08/02 12:29:25 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRC	=			ft_strlen.c \
 				ft_isalpha.c \
 				ft_isdigit.c \
 				ft_isalnum.c \
+				ft_isprint.c \
 
 OBJ	=			${SRC:.c=.o}
 
