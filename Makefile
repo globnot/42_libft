@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/30 16:04:27 by aborda            #+#    #+#              #
-#    Updated: 2025/08/02 12:37:19 by aborda           ###   ########.fr        #
+#    Updated: 2025/08/02 16:27:30 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,6 @@ SRC	=			ft_strlen.c \
 
 OBJ	=			${SRC:.c=.o}
 
-allclean:		all clean
 all:			$(NAME)
 
 $(NAME):		$(OBJ)
@@ -50,12 +49,7 @@ fclean:			clean
 
 re:				fclean all
 
-reclean:
-				$(MAKE) fclean
-				$(MAKE) all
-				$(MAKE) clean
-
 debug:			fclean
-				$(MAKE) CFLAGS="$(CFLAGS) $(DEBUGFLAGS)" allclean
+				$(MAKE) CFLAGS="$(CFLAGS) $(DEBUGFLAGS)"
 
 .PHONY: all clean fclean re debug
