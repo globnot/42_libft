@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 18:45:41 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/02 11:20:25 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/02 11:53:43 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int			ft_isalpha_lower(char c);
 int			ft_isalpha_upper(char c);
 int			ft_isalpha(char c);
 int			ft_isdigit(int c);
+int			ft_isalnum(int c);
 
 #endif
