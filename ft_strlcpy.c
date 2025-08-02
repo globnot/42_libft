@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 17:20:51 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/01 17:28:12 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/02 11:04:19 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcpy(char *dest, char *src, size_t destsize)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (destsize > 0)

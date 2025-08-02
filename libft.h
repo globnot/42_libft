@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 18:45:41 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/02 10:34:22 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/02 11:04:56 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ void		ft_swapstr(char **s1, char **s2);
 char		*ft_strdup(const char *s);
 int			ft_isalpha_lower(char c);
 int			ft_isalpha_upper(char c);
+int			ft_isalpha(char c);
 
 #endif
