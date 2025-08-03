@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 18:45:41 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/02 12:37:07 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/03 11:32:59 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,14 @@
 size_t		ft_strlen(const char *s);
 void		ft_putchar(char c);
 void		ft_putstr(char *s);
-void		ft_putnbr(int nb);
+void		ft_putnbr_fd(int n, int fd);
 void		ft_swapint(int *a, int *b);
 void		ft_swapstr(char **s1, char **s2);
 char		*ft_strdup(const char *s);
-int			ft_isalpha_lower(int c);
-int			ft_isalpha_upper(int c);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);
 int			ft_isprint(int c);
-int			ft_isspace(int c);
 int			ft_atoi(const char *s);
 
 #endif
