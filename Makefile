@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/30 16:04:27 by aborda            #+#    #+#              #
-#    Updated: 2025/08/03 11:39:33 by aborda           ###   ########.fr        #
+#    Updated: 2025/08/03 11:44:13 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,8 @@ DEBUGFLAGS =	-g
 
 SRC	=			ft_strlen.c \
 				ft_putchar_fd.c \
-				ft_putstr.c \
+				ft_putstr_fd.c \
 				ft_putnbr_fd.c \
-				ft_swapint.c \
-				ft_swapstr.c \
 				ft_strdup.c \
 				ft_isalpha.c \
 				ft_isdigit.c \
