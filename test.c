@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 17:01:24 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/03 20:13:28 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/03 21:40:24 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,23 @@ void	assert_eq_size_t(size_t expected, size_t actual, const char *input)
 	else
 		printf("❌ [%s] KO | expected: %zu, actual: %zu\n", input, expected, actual);
 }
+
+void	assert_eq_char(char *expected, char *actual, const char *input)
+{
+	if (expected == actual)
+		printf("✅ [%s] OK (value: %s)\n", input, actual);
+	else
+		printf("❌ [%s] KO | expected: %s, actual: %s\n", input, expected, actual);
+}
+
+void	assert_eq_str(const char *expected, const char *actual, const char *label)
+{
+	if (strcmp(expected, actual) == 0)
+		printf("✅ [%s] OK (value: \"%s\")\n", label, actual);
+	else
+		printf("❌ [%s] KO\n\texpected: \"%s\"\n\tactual  : \"%s\"\n", label, expected, actual);
+}
+
 
 /*
 test_ft_isalpha
@@ -89,7 +106,6 @@ void	test_ft_isalnum(void)
 	assert_eq_int_logical(isalnum('\n'), ft_isalnum('\n'), "\\n");
 	assert_eq_int_logical(isalnum(-1), ft_isalnum(-1), "-1");
 	assert_eq_int_logical(isalnum(-42), ft_isalnum(-42), "-42");
-	printf("----------------------------------------\n");
 }
 
 /*
@@ -121,11 +137,31 @@ void	test_ft_strlen(void)
 	printf("----------------------------------------\n");
 }
 
+/*
+test_ft_strlcpy
+*/
+void	test_ft_strlcpy(void)
+{
+	char	src[] = "42";
+	size_t	destsize = 0;
+	char	dest_std[10] = "xxxxxxxxxx";
+	char	dest_ft[10] = "xxxxxxxxxx";
+
+	printf("\n========== Test de ft_strlcpy ==========\n");
+	printf("src: %s\ndestsize: %zu\n", src, destsize);
+	// Comparaison des retours
+	assert_eq_int(strlcpy(dest_std, src, destsize), ft_strlcpy(dest_ft, src, destsize), "Return values std & ft");
+	// Comparaison des buffers (contenu)
+	assert_eq_str(dest_std, dest_ft, "Buffer strlcpy");
+	printf("----------------------------------------\n");
+}
+
 int	main(void)
 {
 	// test_ft_isalpha();
 	// test_ft_isdigit();
 	// test_ft_isalnum();
-	test_ft_isprint();
+	// test_ft_isprint();
+	test_ft_strlcpy();
 	// test_ft_strlen();
 }
