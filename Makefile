@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/30 16:04:27 by aborda            #+#    #+#              #
-#    Updated: 2025/08/03 12:30:41 by aborda           ###   ########.fr        #
+#    Updated: 2025/08/03 17:00:39 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,8 @@ NAME =			libft.a
 CC =			cc
 CFLAGS = 		-Wall -Wextra -Werror -I.
 DEBUGFLAGS =	-g
+TEST =			test.c
+TESTEXEC =		test
 
 SRC	=			ft_isalpha.c \
 				ft_isdigit.c \
@@ -41,11 +43,14 @@ clean:
 				rm -f $(OBJ)
 
 fclean:			clean
-				rm -f $(NAME)
+				rm -f $(NAME) $(TESTEXEC)
 
 re:				fclean all
 
 debug:			fclean
 				$(MAKE) CFLAGS="$(CFLAGS) $(DEBUGFLAGS)"
 
-.PHONY: all clean fclean re debug
+test:			$(NAME)
+				$(CC) $(CFLAGS) $(TEST) -L. -lft -o $(TESTEXEC)
+
+.PHONY: all clean fclean re debug test
