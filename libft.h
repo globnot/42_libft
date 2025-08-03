@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 18:45:41 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/03 11:32:59 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/03 11:39:22 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define FT_INT_MIN -2147483648
 
 size_t		ft_strlen(const char *s);
-void		ft_putchar(char c);
+void		ft_putchar_fd(char c, int fd);
 void		ft_putstr(char *s);
 void		ft_putnbr_fd(int n, int fd);
 void		ft_swapint(int *a, int *b);
