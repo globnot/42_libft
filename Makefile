@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/30 16:04:27 by aborda            #+#    #+#              #
-#    Updated: 2025/08/03 11:44:13 by aborda           ###   ########.fr        #
+#    Updated: 2025/08/03 12:01:35 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,16 +15,19 @@ CC =			cc
 CFLAGS = 		-Wall -Wextra -Werror -I.
 DEBUGFLAGS =	-g
 
-SRC	=			ft_strlen.c \
-				ft_putchar_fd.c \
-				ft_putstr_fd.c \
-				ft_putnbr_fd.c \
-				ft_strdup.c \
-				ft_isalpha.c \
+SRC	=			ft_isalpha.c \
 				ft_isdigit.c \
 				ft_isalnum.c \
 				ft_isprint.c \
+				ft_strlen.c \
+				ft_strlcpy.c \
 				ft_atoi.c \
+				
+				ft_strdup.c \
+
+				ft_putchar_fd.c \
+				ft_putstr_fd.c \
+				ft_putnbr_fd.c \
 
 OBJ	=			${SRC:.c=.o}
 
