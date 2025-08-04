@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 19:14:07 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/04 20:18:19 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/04 21:08:11 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	test_ft_strlen(void)
 {
-	t_test_char				tests[5];
-	size_t				nb_tests;
-	int					i;
+	t_test_char	tests[5];
+	size_t		nb_tests;
+	int			i;
 
 	tests[0] = (t_test_char){.actual = "", .label = "\"\""};
 	tests[1] = (t_test_char){.actual = "abc", .label = "abc"};
@@ -33,5 +33,5 @@ void	test_ft_strlen(void)
 		i++;
 		nb_tests--;
 	}
-		printf("----------------------------------------\n");
+	printf("----------------------------------------\n");
 }
