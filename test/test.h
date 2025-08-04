@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:47:04 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/04 20:28:26 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/04 21:02:25 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,10 @@ void	assert_eq_str(const char *expected, const char *actual,
 */
 void	test_ft_isalpha(void);
 void	test_ft_isdigit(void);
+void	test_ft_isalnum(void);
+void	test_ft_isprint(void);
 void	test_ft_strlen(void);
+void	test_ft_strlcpy(void);
 void	test_ft_atoi(void);
 
 #endif

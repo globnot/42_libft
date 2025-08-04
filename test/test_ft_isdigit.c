@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 19:14:07 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/04 20:33:11 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/04 20:59:56 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	test_ft_isdigit(void)
 	size_t				nb_tests;
 	int					i;
 
-	tests[0] = (t_test_int){.actual = ' ', .label = "\"\""};
+	tests[0] = (t_test_int){.actual = '\0', .label = "\\0"};
 	tests[1] = (t_test_int){.actual = '1', .label = "1"};
 	tests[2] = (t_test_int){.actual = 'a', .label = "a"};
 	tests[3] = (t_test_int){.actual = '!', .label = "!"};
