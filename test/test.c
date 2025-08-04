@@ -6,10 +6,11 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 17:01:24 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/04 12:02:21 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/04 16:55:24 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "test.h"
 #include "libft.h"
 #include <stdio.h>
 #include <ctype.h>
@@ -23,7 +24,8 @@ void	assert_eq_int_logical(int expected, int actual, const char *label)
 	if ((expected != 0 && actual != 0) || (expected == 0 && actual == 0))
 		printf("✅ [%s] OK (value: %d)\n", label, actual);
 	else
-		printf("❌ [%s] KO | expected: %d, actual: %d\n", label, expected, actual);
+		printf("❌ [%s] KO | expected: %d, actual: %d\n",
+			label, expected, actual);
 }
 
 void	assert_eq_int(int expected, int actual, const char *label)
@@ -31,7 +33,8 @@ void	assert_eq_int(int expected, int actual, const char *label)
 	if (expected == actual)
 		printf("✅ [%s] OK (value: %d)\n", label, actual);
 	else
-		printf("❌ [%s] KO | expected: %d, actual: %d\n", label, expected, actual);
+		printf("❌ [%s] KO | expected: %d, actual: %d\n",
+			label, expected, actual);
 }
 
 void	assert_eq_size_t(size_t expected, size_t actual, const char *label)
@@ -39,7 +42,8 @@ void	assert_eq_size_t(size_t expected, size_t actual, const char *label)
 	if (expected == actual)
 		printf("✅ [%s] OK (value: %zu)\n", label, actual);
 	else
-		printf("❌ [%s] KO | expected: %zu, actual: %zu\n", label, expected, actual);
+		printf("❌ [%s] KO | expected: %zu, actual: %zu\n",
+			label, expected, actual);
 }
 
 void	assert_eq_char(char *expected, char *actual, const char *label)
@@ -47,20 +51,21 @@ void	assert_eq_char(char *expected, char *actual, const char *label)
 	if (expected == actual)
 		printf("✅ [%s] OK (value: %s)\n", label, actual);
 	else
-		printf("❌ [%s] KO | expected: %s, actual: %s\n", label, expected, actual);
+		printf("❌ [%s] KO | expected: %s, actual: %s\n",
+			label, expected, actual);
 }
 
-void	assert_eq_str(const char *expected, const char *actual, const char *label)
+void	assert_eq_str(const char *expected, const char *actual,
+				const char *label)
 {
 	if (strcmp(expected, actual) == 0)
 		printf("✅ [%s] OK (value: \"%s\")\n", label, actual);
 	else
-		printf("❌ [%s] KO\n\texpected: \"%s\"\n\tactual  : \"%s\"\n", label, expected, actual);
+		printf("❌ [%s] KO\n\texpected: \"%s\"\n\tactual  : \"%s\"\n",
+			label, expected, actual);
 }
 
-
-/*explique moi ca
-size_t nb_tests = sizeof(tests) / sizeof(tests[0]);
+/*
 	* test_ft_isalpha
 */
 void	test_ft_isalpha(void)
@@ -127,27 +132,24 @@ void	test_ft_isprint(void)
 /*
 	* test_ft_strlen
 */
-typedef struct s_test_ft_strlen {
-	const char *actual;
-	const char *label;
-} t_test_ft_strlen;
-
 void	test_ft_strlen(void)
 {
-	t_test_ft_strlen	tests[] = {
-		{.actual = "", .label = "\"\""},
-		{.actual = "abc", .label = "abc"},
-		{.actual = "a b c", .label = "a b c"},
-		{.actual = "abc\n\tdef", .label = "abc\\n\\tdef"},
-		{.actual = "123456!", .label = "123456!"},
-	};
-	size_t	nb_tests = sizeof(tests) / sizeof(tests[0]);
-	int	i = 0;
+	t_test				tests[5];
+	size_t				nb_tests;
+	int					i;
 
+	tests[0] = (t_test){.actual = "", .label = "\"\""};
+	tests[1] = (t_test){.actual = "abc", .label = "abc"};
+	tests[2] = (t_test){.actual = "a b c", .label = "a b c"};
+	tests[3] = (t_test){.actual = "abc\n", .label = "abc\\n"};
+	tests[4] = (t_test){.actual = "123456!", .label = "123456!"};
 	printf("\n========== Test de ft_strlen ==========\n");
+	nb_tests = sizeof(tests) / sizeof(tests[0]);
+	i = 0;
 	while (nb_tests > 0)
 	{
-		assert_eq_size_t(strlen(tests[i].actual), ft_strlen(tests[i].actual), tests[i].label);
+		assert_eq_size_t(strlen(tests[i].actual), ft_strlen(tests[i].actual),
+			tests[i].label);
 		i++;
 		nb_tests--;
 	}
@@ -159,14 +161,19 @@ void	test_ft_strlen(void)
 */
 void	test_ft_strlcpy(void)
 {
-	char	src[] = "42";
-	size_t	destsize = 0;
-	char	dest_std[10] = "xxxxxxxxxx";
-	char	dest_ft[10] = "xxxxxxxxxx";
+	char	*src;
+	size_t	destsize;
+	char	*dest_std;
+	char	*dest_ft;
 
+	src = "42";
+	destsize = 0;
+	dest_std = "xxxxxxxxxx";
+	dest_ft = "xxxxxxxxxx";
 	printf("\n========== Test de ft_strlcpy ==========\n");
 	printf("src: %s\ndestsize: %zu\n", src, destsize);
-	assert_eq_int(strlcpy(dest_std, src, destsize), ft_strlcpy(dest_ft, src, destsize), "Return values std & ft");
+	assert_eq_int(strlcpy(dest_std, src, destsize),
+		ft_strlcpy(dest_ft, src, destsize), "Return values std & ft");
 	assert_eq_str(dest_std, dest_ft, "Buffer strlcpy");
 	printf("----------------------------------------\n");
 }
@@ -176,25 +183,27 @@ void	test_ft_strlcpy(void)
 */
 void	test_ft_atoi(void)
 {
-	char	*tests[] = {
-		"",
-		"abc",
-		"2147483647",
-		"-2147483648",
-		"42",
-		"-42",
-		"   42",
-		"   --42,",
-		"-0042abc",
-		"0042abc"
-	};
-	size_t	nb_tests = sizeof(tests) / sizeof(tests[0]);
-	int	i = 0;
+	t_test	tests[10];
+	size_t	nb_tests;
+	int		i;
 
+	tests[0] = (t_test){.actual = "", .label = "\"\""};
+	tests[1] = (t_test){.actual = "abc", .label = "abc"};
+	tests[2] = (t_test){.actual = "2147483647", .label = "2147483647"};
+	tests[3] = (t_test){.actual = "-2147483648", .label = "-2147483648"};
+	tests[4] = (t_test){.actual = "42", .label = "42"};
+	tests[5] = (t_test){.actual = "-42", .label = "-42"};
+	tests[6] = (t_test){.actual = "   42", .label = "   42"};
+	tests[7] = (t_test){.actual = "   --42", .label = "   --42"};
+	tests[8] = (t_test){.actual = "-0042abc", .label = "-0042abc"};
+	tests[9] = (t_test){.actual = "0042abc", .label = "0042abc"};
 	printf("\n========== Test de ft_atoi ==========\n");
+	nb_tests = sizeof(tests) / sizeof(tests[0]);
+	i = 0;
 	while (nb_tests > 0)
 	{
-		assert_eq_int(atoi(tests[i]), ft_atoi(tests[i]), tests[i]);
+		assert_eq_int(atoi(tests[i].actual), ft_atoi(tests[i].actual),
+			tests[i].label);
 		i++;
 		nb_tests--;
 	}
@@ -203,11 +212,11 @@ void	test_ft_atoi(void)
 
 int	main(void)
 {
-	// test_ft_isalpha();
-	// test_ft_isdigit();
-	// test_ft_isalnum();
-	// test_ft_isprint();
-	 test_ft_strlen();
-	// test_ft_strlcpy();
-	// test_ft_atoi();
+	test_ft_isalpha();
+	test_ft_isdigit();
+	test_ft_isalnum();
+	test_ft_isprint();
+	test_ft_strlen();
+	test_ft_strlcpy();
+	test_ft_atoi();
 }

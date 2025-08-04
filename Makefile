@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/30 16:04:27 by aborda            #+#    #+#              #
-#    Updated: 2025/08/03 17:00:39 by aborda           ###   ########.fr        #
+#    Updated: 2025/08/04 17:54:35 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,9 @@ NAME =			libft.a
 CC =			cc
 CFLAGS = 		-Wall -Wextra -Werror -I.
 DEBUGFLAGS =	-g
-TEST =			test.c
-TESTEXEC =		test
+TESTDIR =		test
+TEST =			$(TESTDIR)/test.c
+TESTEXEC =		$(TESTDIR)/test
 
 SRC	=			ft_isalpha.c \
 				ft_isdigit.c \
