@@ -6,12 +6,11 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 18:05:48 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/04 18:31:58 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/04 19:56:56 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "test.h"
 
 void	assert_eq_int_logical(int expected, int actual, const char *label)
 {
