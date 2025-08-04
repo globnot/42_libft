@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:47:04 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/04 19:57:55 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/04 20:28:26 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,17 @@
 # include <string.h>
 # include <ctype.h>
 
-typedef struct s_test
+typedef struct s_test_char
 {
 	const char	*actual;
 	const char	*label;
-}	t_test;
+}	t_test_char;
+
+typedef struct s_test_int
+{
+	int			actual;
+	const char	*label;
+}	t_test_int;
 
 /*
  * assert
@@ -37,6 +43,8 @@ void	assert_eq_str(const char *expected, const char *actual,
 /*
  * test
 */
+void	test_ft_isalpha(void);
+void	test_ft_isdigit(void);
 void	test_ft_strlen(void);
 void	test_ft_atoi(void);
 

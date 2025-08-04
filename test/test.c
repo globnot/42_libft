@@ -6,44 +6,11 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 17:01:24 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/04 19:57:16 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/04 20:30:19 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test.h"
-
-/*
-	* test_ft_isalpha
-*/
-void	test_ft_isalpha(void)
-{
-	printf("\n========== Test de ft_isalpha ==========\n");
-	assert_eq_int_logical(isalpha(' '), ft_isalpha(' '), "\' \'");
-	assert_eq_int_logical(isalpha('A'), ft_isalpha('A'), "A");
-	assert_eq_int_logical(isalpha('a'), ft_isalpha('a'), "a");
-	assert_eq_int_logical(isalpha('1'), ft_isalpha('1'), "1");
-	assert_eq_int_logical(isalpha('!'), ft_isalpha('!'), "!");
-	assert_eq_int_logical(isalpha('\n'), ft_isalpha('\n'), "\\n");
-	assert_eq_int_logical(isalpha(-1), ft_isalpha(-1), "-1");
-	assert_eq_int_logical(isalpha(-42), ft_isalpha(-42), "-42");
-	printf("----------------------------------------\n");
-}
-
-/*
-	* test_ft_isdigit
-*/
-void	test_ft_isdigit(void)
-{
-	printf("\n========== Test de ft_isdigit ==========\n");
-	assert_eq_int_logical(isdigit(' '), ft_isdigit(' '), "\' \'");
-	assert_eq_int_logical(isdigit('1'), ft_isdigit('1'), "1");
-	assert_eq_int_logical(isdigit('a'), ft_isdigit('a'), "a");
-	assert_eq_int_logical(isdigit('!'), ft_isdigit('!'), "!");
-	assert_eq_int_logical(isdigit('\n'), ft_isdigit('\n'), "\\n");
-	assert_eq_int_logical(isdigit(-1), ft_isdigit(-1), "-1");
-	assert_eq_int_logical(isdigit(-42), ft_isdigit(-42), "-42");
-	printf("----------------------------------------\n");
-}
 
 /*
 	* test_ft_isalnum
