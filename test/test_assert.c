@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 18:05:48 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/04 19:56:56 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/05 10:56:50 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,15 @@ void	assert_eq_str(const char *expected, const char *actual,
 		printf("✅ [%s] OK (value: \"%s\")\n", label, actual);
 	else
 		printf("❌ [%s] KO\n\texpected: \"%s\"\n\tactual  : \"%s\"\n",
+			label, expected, actual);
+}
+
+void	assert_eq_ptr(void *expected, void *actual,
+				const char *label)
+{
+	if (expected == actual)
+		printf("✅ [%s] OK (value: %p)\n", label, actual);
+	else
+		printf("❌ [%s] KO | expected: %p, actual: %p\n",
 			label, expected, actual);
 }
