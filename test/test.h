@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:47:04 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/05 12:14:18 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/05 18:26:45 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define TEST_H
 
 # include "libft.h"
+# include "assert.h"
 # include <stdio.h>
 # include <string.h>
 # include <ctype.h>
@@ -39,20 +40,6 @@ typedef struct s_test_memset
 	const char	*label_buffer;
 }	t_test_memset;
 
-/*
- * assert
-*/
-void	assert_eq_int_logical(int expected, int actual, const char *label);
-void	assert_eq_int(int expected, int actual, const char *label);
-void	assert_eq_size_t(size_t expected, size_t actual, const char *label);
-void	assert_eq_char(char *expected, char *actual, const char *label);
-void	assert_eq_str(const char *expected, const char *actual,
-			const char *label);
-void	assert_eq_ptr(void *expected, void *actual, const char *label);
-
-/*
- * test
-*/
 void	test_ft_isalpha(void);
 void	test_ft_isdigit(void);
 void	test_ft_isalnum(void);
