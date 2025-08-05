@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 18:45:41 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/03 12:31:07 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/05 09:27:54 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);
+int			ft_isascii(int c);
 int			ft_isprint(int c);
 size_t		ft_strlen(const char *s);
 size_t		ft_strlcpy(char *dest, char *src, size_t destsize);

@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/03 17:01:24 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/05 09:33:49 by aborda           ###   ########.fr       */
+/*   Created: 2025/08/05 09:00:29 by aborda            #+#    #+#             */
+/*   Updated: 2025/08/05 09:33:05 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "libft.h"
 
-int	main(void)
+int	ft_isascii(int c)
 {
-	test_ft_isalpha();
-	test_ft_isdigit();
-	test_ft_isalnum();
-	test_ft_isascii();
-	test_ft_isprint();
-	test_ft_strlen();
-	test_ft_strlcpy();
-	test_ft_atoi();
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }
