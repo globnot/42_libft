@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:47:04 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/06 13:21:24 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/06 19:30:24 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ typedef struct s_test_bzero
 
 typedef struct s_test_memcpy
 {
-	const char	*src;
 	char		dest[20];
+	const char	*src;
 	size_t		n;
 	const char	*label_return;
 	const char	*label_buffer;
@@ -62,6 +62,15 @@ typedef struct s_test_memmove
 	size_t		n;
 	const char	*label;
 }	t_test_memmove;
+
+typedef struct s_test_strlcpy
+{
+	char		dst[20];
+	char const	*src;
+	size_t		dsize;
+	const char	*label_return;
+	const char	*label_buffer;
+}	t_test_strlcpy;
 
 void	test_ft_isalpha(void);
 void	test_ft_isdigit(void);

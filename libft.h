@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 18:45:41 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/06 11:58:43 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/06 18:53:38 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void		*ft_memset(void *s, int c, size_t n);
 void		ft_bzero(void *s, size_t n);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
 void		*ft_memmove(void *dest, const void *src, size_t n);
-size_t		ft_strlcpy(char *dest, char *src, size_t destsize);
+size_t		ft_strlcpy(char *dst, const char *src, size_t dsize);
 int			ft_atoi(const char *s);
 char		*ft_strdup(const char *s);
 void		ft_putchar_fd(char c, int fd);

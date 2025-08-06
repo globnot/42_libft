@@ -6,25 +6,25 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 17:20:51 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/02 11:04:19 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/06 18:52:01 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, char *src, size_t destsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 {
 	size_t	i;
 
 	i = 0;
-	if (destsize > 0)
+	if (dsize > 0)
 	{
-		while (i < destsize - 1 && src[i])
+		while (i < dsize - 1 && src[i])
 		{
-			dest[i] = src[i];
+			dst[i] = src[i];
 			i++;
 		}
-		dest[i] = '\0';
+		dst[i] = '\0';
 	}
 	return (ft_strlen(src));
 }
