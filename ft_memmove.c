@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/03 17:01:24 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/06 12:18:59 by aborda           ###   ########.fr       */
+/*   Created: 2025/08/06 11:08:16 by aborda            #+#    #+#             */
+/*   Updated: 2025/08/06 11:57:25 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "libft.h"
 
-int	main(void)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	test_ft_isalpha();
-	test_ft_isdigit();
-	test_ft_isalnum();
-	test_ft_isascii();
-	test_ft_isprint();
-	test_ft_strlen();
-	test_ft_memset();
-	test_ft_bzero();
-	test_ft_memcpy();
-	test_ft_memmove();
-	test_ft_strlcpy();
-	test_ft_atoi();
+	char		*ptr_dest;
+	const char	*ptr_src;
+	size_t		i;
+
+	ptr_dest = (char *)dest;
+	ptr_src = (const char *)src;
+	if (ptr_dest < ptr_src)
+	{
+		return (ft_memcpy(dest, src, n));
+	}
+	else if (ptr_dest > ptr_src)
+	{
+		i = n;
+		while (i > 0)
+		{
+			i--;
+			ptr_dest[i] = ptr_src[i];
+		}
+	}
+	return (dest);
 }

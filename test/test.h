@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:47:04 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/06 10:17:25 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/06 13:21:24 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,13 @@ typedef struct s_test_memcpy
 	const char	*label_buffer;
 }	t_test_memcpy;
 
+typedef struct s_test_memmove
+{
+	char		dest[20];
+	size_t		n;
+	const char	*label;
+}	t_test_memmove;
+
 void	test_ft_isalpha(void);
 void	test_ft_isdigit(void);
 void	test_ft_isalnum(void);
@@ -65,6 +72,7 @@ void	test_ft_strlen(void);
 void	test_ft_memset(void);
 void	test_ft_bzero(void);
 void	test_ft_memcpy(void);
+void	test_ft_memmove(void);
 void	test_ft_strlcpy(void);
 void	test_ft_atoi(void);
 
