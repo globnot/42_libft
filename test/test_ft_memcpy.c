@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:01:38 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/06 10:37:18 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/07 14:23:45 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,29 @@
 void	init_memcpy_tests(t_test_memcpy *tests)
 {
 	tests[0] = (t_test_memcpy){.dest = "XXXXXX", .src = "ABC", .n = 0,
-		.label_return = "Return",
-		.label_buffer = "Buffer dest = XXXXXX, src = ABC, n = 0"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) dest = XXXXXX, src = ABC, n = 0"};
 	tests[1] = (t_test_memcpy){.dest = "XXXXXX", .src = "ABC", .n = 3,
-		.label_return = "Return",
-		.label_buffer = "Buffer dest = XXXXXX, src = ABC, n = 3"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) dest = XXXXXX, src = ABC, n = 3"};
 	tests[2] = (t_test_memcpy){.dest = "XXXXXX", .src = "ABC", .n = 6,
-		.label_return = "Return",
-		.label_buffer = "Buffer dest = XXXXXX, src = ABC, n = 6"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) dest = XXXXXX, src = ABC, n = 6"};
 	tests[3] = (t_test_memcpy){.dest = "123456", .src = "abcdef", .n = 6,
-		.label_return = "Return",
-		.label_buffer = "Buffer dest = 123456, src = abcdef, n = 6"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) dest = 123456, src = abcdef, n = 6"};
 	tests[4] = (t_test_memcpy){.dest = "123456789", .src = "XYZ", .n = 2,
-		.label_return = "Return",
-		.label_buffer = "Buffer dest = 123456789, src = XYZ, n = 2"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) dest = 123456789, src = XYZ, n = 2"};
 	tests[5] = (t_test_memcpy){.dest = "XXXXXX", .src = "", .n = 0,
-		.label_return = "Return",
-		.label_buffer = "Buffer dest = XXXXXX, src = "", n = 0"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) dest = XXXXXX, src = "", n = 0"};
 	tests[6] = (t_test_memcpy){.dest = "AAAAAA", .src = "BBBBBB", .n = 6,
-		.label_return = "Return",
-		.label_buffer = "Buffer dest = AAAAAA, src = BBBBBB, n = 6"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) dest = AAAAAA, src = BBBBBB, n = 6"};
 	tests[7] = (t_test_memcpy){.dest = "ABCDEF", .src = "DEF", .n = 2,
-		.label_return = "Return",
-		.label_buffer = "Buffer dest = ABCDEF, src = DEF, n = 2"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) dest = ABCDEF, src = DEF, n = 2"};
 }
 
 void	test_ft_memcpy(void)

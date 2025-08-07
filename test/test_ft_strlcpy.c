@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 21:01:24 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/06 19:29:54 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/07 14:29:08 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 void	init_strlcpy_tests(t_test_strlcpy *tests)
 {
 	tests[0] = (t_test_strlcpy){.dst = "XXXXXX", .src = "", .dsize = 6,
-		.label_return = "Return",
-		.label_buffer = "Buffer dst = XXXXXX, src = , dsize = 6"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) dst = XXXXXX, src = , dsize = 6"};
 	tests[1] = (t_test_strlcpy){.dst = "XXXXXX", .src = "ABC", .dsize = 6,
-		.label_return = "Return",
-		.label_buffer = "Buffer dst = XXXXXX, src = ABC, dsize = 6"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) dst = XXXXXX, src = ABC, dsize = 6"};
 	tests[2] = (t_test_strlcpy){.dst = "XXXXXX", .src = "ABCDEFG", .dsize = 6,
-		.label_return = "Return",
-		.label_buffer = "Buffer dst = XXXXXX, src = ABCDEFG, dsize = 6"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) dst = XXXXXX, src = ABCDEFG, dsize = 6"};
 	tests[3] = (t_test_strlcpy){.dst = "XXXXXX", .src = "ABC", .dsize = 0,
-		.label_return = "Return",
-		.label_buffer = "Buffer dst = XXXXXX, src = ABC, dsize = 0"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) dst = XXXXXX, src = ABC, dsize = 0"};
 	tests[4] = (t_test_strlcpy){.dst = "XXXXXX", .src = "12345", .dsize = 5,
-		.label_return = "Return",
-		.label_buffer = "Buffer dst = XXXXXX, src = 12345, dsize = 5"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) dst = XXXXXX, src = 12345, dsize = 5"};
 }
 
 void	test_ft_strlcpy(void)

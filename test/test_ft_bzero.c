@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 21:00:00 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/06 09:15:30 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/07 14:20:51 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	init_bzero_tests(t_test_bzero *tests)
 {
 	tests[0] = (t_test_bzero){.s = "abcdef", .n = 3,
-		.label = "Buffer : s = abcdef, n = 3"};
+		.label = "(Buffer) s = abcdef, n = 3"};
 	tests[1] = (t_test_bzero){.s = "", .n = 0,
-		.label = "Buffer : s = "", n = 0"};
+		.label = "(Buffer) s = "", n = 0"};
 	tests[2] = (t_test_bzero){.s = "abc", .n = 0,
-		.label = "Buffer : s = abc, n = 0"};
+		.label = "(Buffer) s = abc, n = 0"};
 	tests[3] = (t_test_bzero){.s = "abc", .n = 3,
-		.label = "Buffer : s = abc, n = 10"};
+		.label = "(Buffer) s = abc, n = 10"};
 }
 
 void	test_ft_bzero(void)

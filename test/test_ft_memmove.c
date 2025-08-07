@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:01:38 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/06 13:31:22 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/07 14:24:07 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	init_memmove_tests(t_test_memmove *tests)
 {
 	tests[0] = (t_test_memmove){.dest = "12345", .n = 5,
 		.label
-		= "Buffer overlap ptr_dest > ptr_src = 12345, n = 5"};
+		= "(Buffer) overlap ptr_dest > ptr_src = 12345, n = 5"};
 	tests[1] = (t_test_memmove){.dest = "12345", .n = 5,
 		.label
-		= "Buffer overlap ptr_dest < ptr_src = 12345, n = 5"};
+		= "(Buffer) overlap ptr_dest < ptr_src = 12345, n = 5"};
 }
 
 void	test_ft_memmove(void)

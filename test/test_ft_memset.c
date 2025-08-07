@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 10:26:37 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/06 10:41:59 by aborda           ###   ########.fr       */
+/*   Updated: 2025/08/07 14:28:33 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,23 @@
 void	init_memset_tests(t_test_memset *tests)
 {
 	tests[0] = (t_test_memset){.s = "XXXXXX", .c = 'T', .n = 0,
-		.label_return = "Return",
-		.label_buffer = "Buffer s = XXXXXX, c = 'T' & n = 0"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) s = XXXXXX, c = 'T', n = 0"};
 	tests[1] = (t_test_memset){.s = "XXXXXX", .c = 'T', .n = 5,
-		.label_return = "Return",
-		.label_buffer = "Buffer s = XXXXXX, c = 'T' & n = 5"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) s = XXXXXX, c = 'T', n = 5"};
 	tests[2] = (t_test_memset){.s = "XXXXXX", .c = 'T', .n = 20,
-		.label_return = "Return",
-		.label_buffer = "Buffer s = XXXXXX, c = 'T' & n = 20"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) s = XXXXXX, c = 'T', n = 20"};
 	tests[3] = (t_test_memset){.s = "XXXXXX", .c = 127, .n = 6,
-		.label_return = "Return",
-		.label_buffer = "Buffer s = XXXXXX, c = 127 & n = 6"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) s = XXXXXX, c = 127, n = 6"};
 	tests[4] = (t_test_memset){.s = "XXXXXX", .c = '\n', .n = 5,
-		.label_return = "Return",
-		.label_buffer = "Buffer s = XXXXXX, c = '\\n' & n = 5"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) s = XXXXXX, c = '\\n', n = 5"};
 	tests[5] = (t_test_memset){.s = "XXXXXX", .c = 'T', .n = 10,
-		.label_return = "Return",
-		.label_buffer = "Buffer s = XXXXXX, c = 'T' & n = 10"};
+		.label_return = "(Return)",
+		.label_buffer = "(Buffer) s = XXXXXX, c = 'T', n = 10"};
 }
 
 void	test_ft_memset(void)
