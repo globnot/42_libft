@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 21:01:24 by aborda            #+#    #+#             */
-/*   Updated: 2025/10/10 19:14:41 by aborda           ###   ########.fr       */
+/*   Updated: 2025/10/10 22:56:10 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void	test_ft_strlcpy(void)
 	i = 0;
 	nb_tests = sizeof(tests) / sizeof(tests[0]);
 	while (i < nb_tests)
-	{	strcpy(std_buf, tests[i].dst);
+	{
+		strcpy(std_buf, tests[i].dst);
 		strcpy(ft_buf, tests[i].dst);
 		assert_eq_int(strlcpy(std_buf, tests[i].src, tests[i].dsize),
 			ft_strlcpy(ft_buf, tests[i].src, tests[i].dsize),
