@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 15:07:56 by aborda            #+#    #+#             */
-/*   Updated: 2025/10/11 15:28:58 by aborda           ###   ########.fr       */
+/*   Updated: 2025/10/11 17:07:08 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ void	test_ft_toupper(void)
 	while (nb_tests > 0)
 	{
 		assert_eq_int(toupper(tests[i].actual),
-				ft_toupper(tests[i].actual), tests[i].label);
+			ft_toupper(tests[i].actual), tests[i].label);
 		i++;
 		nb_tests--;
 	}
 	printf("----------------------------------------\n");
 }
-
