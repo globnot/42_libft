@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 21:01:24 by aborda            #+#    #+#             */
-/*   Updated: 2025/10/10 19:16:08 by aborda           ###   ########.fr       */
+/*   Updated: 2025/10/11 15:55:22 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	init_strlcat_tests(t_test_strlcat *tests)
 	tests[0] = (t_test_strlcat){.dst = "XXXXXX", .src = "", .dsize = 6,
 		.label_return = "(Return)",
 		.label_buffer = "(Buffer) dst = XXXXXX, src = , dsize = 6"};
-	tests[1] = (t_test_strlcat){.dst = "XXXXXX", .src = "ABC", .dsize = 6,
+	tests[1] = (t_test_strlcat){.dst = "XXXXXX", .src = "ABC", .dsize = 10,
 		.label_return = "(Return)",
-		.label_buffer = "(Buffer) dst = XXXXXX, src = ABC, dsize = 6"};
-	tests[2] = (t_test_strlcat){.dst = "XXXXXX", .src = "ABCDEFG", .dsize = 6,
+		.label_buffer = "(Buffer) dst = XXXXXX, src = ABC, dsize = 10"};
+	tests[2] = (t_test_strlcat){.dst = "XXXXXX", .src = "ABCDEFG", .dsize = 10,
 		.label_return = "(Return)",
-		.label_buffer = "(Buffer) dst = XXXXXX, src = ABCDEFG, dsize = 6"};
+		.label_buffer = "(Buffer) dst = XXXXXX, src = ABCDEFG, dsize = 10"};
 	tests[3] = (t_test_strlcat){.dst = "XXXXXX", .src = "ABC", .dsize = 0,
 		.label_return = "(Return)",
 		.label_buffer = "(Buffer) dst = XXXXXX, src = ABC, dsize = 0"};

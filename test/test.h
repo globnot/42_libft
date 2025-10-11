@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:47:04 by aborda            #+#    #+#             */
-/*   Updated: 2025/10/10 18:53:34 by aborda           ###   ########.fr       */
+/*   Updated: 2025/10/11 11:39:25 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,8 @@ void	test_ft_memcpy(void);
 void	test_ft_memmove(void);
 void	test_ft_strlcpy(void);
 void	test_ft_strlcat(void);
+void	test_ft_toupper(void);
+void	test_ft_tolower(void);
 void	test_ft_atoi(void);
 
 #endif

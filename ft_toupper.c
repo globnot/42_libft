@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/03 17:01:24 by aborda            #+#    #+#             */
-/*   Updated: 2025/10/11 15:44:36 by aborda           ###   ########.fr       */
+/*   Created: 2025/10/11 11:24:02 by aborda            #+#    #+#             */
+/*   Updated: 2025/10/11 11:32:24 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "libft.h"
 
-int	main(void)
+int	ft_toupper(int c)
 {
-	test_ft_isalpha();
-	test_ft_isdigit();
-	test_ft_isalnum();
-	test_ft_isascii();
-	test_ft_isprint();
-	test_ft_strlen();
-	test_ft_memset();
-	test_ft_bzero();
-	test_ft_memcpy();
-	test_ft_memmove();
-	test_ft_strlcpy();
-	test_ft_strlcat();
-	test_ft_toupper();
-	test_ft_atoi();
+	if (c >= 'a' && c <= 'z')
+		c = c - 32;
+	return (c);
 }
