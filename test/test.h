@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:47:04 by aborda            #+#    #+#             */
-/*   Updated: 2025/10/12 15:38:02 by aborda           ###   ########.fr       */
+/*   Updated: 2025/10/12 21:45:29 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,23 @@
 # include <string.h>
 # include <ctype.h>
 
-typedef struct s_test_char
+typedef struct s_test_isalpha
 {
-	const char	*actual;
+	int			c;
 	const char	*label;
-}	t_test_char;
+}	t_test_isalpha;
 
 typedef struct s_test_int
 {
 	int			actual;
 	const char	*label;
 }	t_test_int;
+
+typedef struct s_test_char
+{
+	const char	*actual;
+	const char	*label;
+}	t_test_char;
 
 typedef struct s_test_memset
 {
