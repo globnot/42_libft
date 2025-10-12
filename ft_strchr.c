@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 20:06:07 by aborda            #+#    #+#             */
-/*   Updated: 2025/10/12 14:04:16 by aborda           ###   ########.fr       */
+/*   Updated: 2025/10/12 16:33:09 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strchr(const char *s, int c)
 		}
 		i++;
 	}
-	if (s[i] == '\0')
+	if ((char)c == '\0')
 		return ((char *)&s[i]);
 	return (NULL);
 }
