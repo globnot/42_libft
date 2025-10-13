@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:47:04 by aborda            #+#    #+#             */
-/*   Updated: 2025/10/12 21:45:29 by aborda           ###   ########.fr       */
+/*   Updated: 2025/10/13 11:44:18 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ typedef struct s_test_isalpha
 	int			c;
 	const char	*label;
 }	t_test_isalpha;
+
+typedef struct s_test_isdigit
+{
+	int			c;
+	const char	*label;
+}	t_test_isdigit;
 
 typedef struct s_test_int
 {
