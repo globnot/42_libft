@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:47:04 by aborda            #+#    #+#             */
-/*   Updated: 2025/10/13 13:00:25 by aborda           ###   ########.fr       */
+/*   Updated: 2025/10/13 14:43:23 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,25 +55,12 @@ typedef struct s_test_strlen
 	const char	*label;
 }	t_test_strlen;
 
-typedef struct s_test_int
-{
-	int			actual;
-	const char	*label;
-}	t_test_int;
-
-typedef struct s_test_char
-{
-	const char	*actual;
-	const char	*label;
-}	t_test_char;
-
 typedef struct s_test_memset
 {
-	char		s[20];
+	char		*s;
 	int			c;
 	size_t		n;
-	const char	*label_return;
-	const char	*label_buffer;
+	const char	*label;
 }	t_test_memset;
 
 typedef struct s_test_bzero
@@ -123,6 +110,18 @@ typedef struct s_test_strchr
 	int			c;
 	const char	*label;
 }	t_test_strchr;
+
+typedef struct s_test_int
+{
+	int			actual;
+	const char	*label;
+}	t_test_int;
+
+typedef struct s_test_char
+{
+	const char	*actual;
+	const char	*label;
+}	t_test_char;
 
 void	test_ft_isalpha(void);
 void	test_ft_isdigit(void);
