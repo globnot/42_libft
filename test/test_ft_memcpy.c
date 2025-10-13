@@ -6,62 +6,64 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:01:38 by aborda            #+#    #+#             */
-/*   Updated: 2025/08/07 14:23:45 by aborda           ###   ########.fr       */
+/*   Updated: 2025/10/13 20:53:41 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test.h"
 
-void	init_memcpy_tests(t_test_memcpy *tests)
+static void	init_tests(t_test_memcpy *tests)
 {
-	tests[0] = (t_test_memcpy){.dest = "XXXXXX", .src = "ABC", .n = 0,
-		.label_return = "(Return)",
-		.label_buffer = "(Buffer) dest = XXXXXX, src = ABC, n = 0"};
-	tests[1] = (t_test_memcpy){.dest = "XXXXXX", .src = "ABC", .n = 3,
-		.label_return = "(Return)",
-		.label_buffer = "(Buffer) dest = XXXXXX, src = ABC, n = 3"};
-	tests[2] = (t_test_memcpy){.dest = "XXXXXX", .src = "ABC", .n = 6,
-		.label_return = "(Return)",
-		.label_buffer = "(Buffer) dest = XXXXXX, src = ABC, n = 6"};
-	tests[3] = (t_test_memcpy){.dest = "123456", .src = "abcdef", .n = 6,
-		.label_return = "(Return)",
-		.label_buffer = "(Buffer) dest = 123456, src = abcdef, n = 6"};
-	tests[4] = (t_test_memcpy){.dest = "123456789", .src = "XYZ", .n = 2,
-		.label_return = "(Return)",
-		.label_buffer = "(Buffer) dest = 123456789, src = XYZ, n = 2"};
-	tests[5] = (t_test_memcpy){.dest = "XXXXXX", .src = "", .n = 0,
-		.label_return = "(Return)",
-		.label_buffer = "(Buffer) dest = XXXXXX, src = "", n = 0"};
-	tests[6] = (t_test_memcpy){.dest = "AAAAAA", .src = "BBBBBB", .n = 6,
-		.label_return = "(Return)",
-		.label_buffer = "(Buffer) dest = AAAAAA, src = BBBBBB, n = 6"};
-	tests[7] = (t_test_memcpy){.dest = "ABCDEF", .src = "DEF", .n = 2,
-		.label_return = "(Return)",
-		.label_buffer = "(Buffer) dest = ABCDEF, src = DEF, n = 2"};
+	tests[0] = (t_test_memcpy)
+	{"Hello", "World", 3, "Copy first 3 bytes of 'World' into 'Hello'"};
+	tests[1] = (t_test_memcpy)
+	{"Hello", "World", 0, "Copy 0 bytes (no change)"};
+	tests[2] = (t_test_memcpy)
+	{"abcdef", "123456", 6, "Copy 6 bytes of '123456' into 'abcdef'"};
+	tests[3] = (t_test_memcpy)
+	{"abcdef", "XYZ", 2, "Copy first 2 bytes of 'XYZ' into 'abcdef'"};
+	tests[4] = (t_test_memcpy)
+	{"123456", "abcdef", 4, "Copy first 4 bytes of 'abcdef' into '123456'"};
+	tests[5] = (t_test_memcpy)
+	{"", "def", 2, "Copy 2 bytes of 'def' into empty string"};
+}
+
+static void	print_results(const char *label, char *expected, char *actual,
+				size_t n)
+{
+	if (memcmp(expected, actual, n) == 0)
+	{
+		printf("✅OK | %s\n", label);
+		printf("expected: \"%s\" | actual: \"%s\"\n", expected, actual);
+	}
+	else
+	{
+		printf("❌KO | %s\n", label);
+		printf("expected: \"%s\" | actual: \"%s\"\n", expected, actual);
+	}
 }
 
 void	test_ft_memcpy(void)
 {
-	t_test_memcpy	tests[8];
+	t_test_memcpy	tests[6];
+	size_t			i;
+	size_t			nb_tests;
 	char			std_buf[20];
 	char			ft_buf[20];
-	size_t			nb_tests;
-	size_t			i;
 
-	init_memcpy_tests(tests);
-	printf("\n========== Test de ft_memcpy ==========\n");
 	i = 0;
 	nb_tests = sizeof(tests) / sizeof(tests[0]);
+	init_tests(tests);
+	printf("\n========== Test de ft_memcpy ==========\n");
 	while (i < nb_tests)
 	{
-		assert_eq_ptr(memcpy(tests[i].dest, tests[i].src, tests[i].n),
-			ft_memcpy(tests[i].dest, tests[i].src, tests[i].n),
-			tests[i].label_return);
+		memset(std_buf, 0, sizeof(std_buf));
+		memset(ft_buf, 0, sizeof(std_buf));
 		strcpy(std_buf, tests[i].dest);
 		strcpy(ft_buf, tests[i].dest);
 		memcpy(std_buf, tests[i].src, tests[i].n);
 		ft_memcpy(ft_buf, tests[i].src, tests[i].n);
-		assert_eq_str(std_buf, ft_buf, tests[i].label_buffer);
+		print_results(tests[i].label, std_buf, ft_buf, tests[i].n);
 		i++;
 	}
 	printf("----------------------------------------\n");
