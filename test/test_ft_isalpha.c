@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 19:14:07 by aborda            #+#    #+#             */
-/*   Updated: 2025/10/12 22:23:21 by aborda           ###   ########.fr       */
+/*   Updated: 2025/10/13 12:30:24 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	init_tests(t_test_isalpha *tests)
 	tests[2] = (t_test_isalpha)
 	{'a', "Lower character (a)"};
 	tests[3] = (t_test_isalpha)
-	{'1', "Positiv digit (1)"};
+	{'1', "Positive digit (1)"};
 	tests[4] = (t_test_isalpha)
 	{'!', "Special character (!)"};
 	tests[5] = (t_test_isalpha)
@@ -29,7 +29,7 @@ static void	init_tests(t_test_isalpha *tests)
 	tests[6] = (t_test_isalpha)
 	{-1, "Negative digit (-1)"};
 	tests[7] = (t_test_isalpha)
-	{-42, "Negativ digit (-42)"};
+	{-42, "Negative digit (-42)"};
 }
 
 static void	print_results(const char *label, int expected, int actual)

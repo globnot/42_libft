@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 19:14:07 by aborda            #+#    #+#             */
-/*   Updated: 2025/10/13 12:00:41 by aborda           ###   ########.fr       */
+/*   Updated: 2025/10/13 12:31:08 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ static void	init_tests(t_test_isalnum *tests)
 	tests[0] = (t_test_isalnum)
 	{'\0', "NULL character"};
 	tests[1] = (t_test_isalnum)
-	{'0', "Positiv digit min (0)"};
+	{'0', "Positive digit min (0)"};
 	tests[2] = (t_test_isalnum)
-	{'9', "Positiv digit max (9)"};
+	{'9', "Positive digit max (9)"};
 	tests[3] = (t_test_isalnum)
 	{'a', "Lower character (a)"};
 	tests[4] = (t_test_isalnum)
@@ -29,7 +29,7 @@ static void	init_tests(t_test_isalnum *tests)
 	tests[6] = (t_test_isalnum)
 	{-1, "Negative digit (-1)"};
 	tests[7] = (t_test_isalnum)
-	{-42, "Negativ digit (-42)"};
+	{-42, "Negative digit (-42)"};
 }
 
 static void	print_results(const char *label, int expected, int actual)

@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 19:14:07 by aborda            #+#    #+#             */
-/*   Updated: 2025/10/13 11:50:26 by aborda           ###   ########.fr       */
+/*   Updated: 2025/10/13 12:31:28 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	init_tests(t_test_isdigit *tests)
 	tests[0] = (t_test_isdigit)
 	{'\0', "NULL character"};
 	tests[1] = (t_test_isdigit)
-	{'1', "Positiv digit (1)"};
+	{'1', "Positive digit (1)"};
 	tests[2] = (t_test_isdigit)
 	{'a', "Lower character (a)"};
 	tests[3] = (t_test_isdigit)
@@ -27,7 +27,7 @@ static void	init_tests(t_test_isdigit *tests)
 	tests[5] = (t_test_isdigit)
 	{-1, "Negative digit (-1)"};
 	tests[6] = (t_test_isdigit)
-	{-42, "Negativ digit (-42)"};
+	{-42, "Negative digit (-42)"};
 }
 
 static void	print_results(const char *label, int expected, int actual)
