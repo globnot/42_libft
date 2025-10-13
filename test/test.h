@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:47:04 by aborda            #+#    #+#             */
-/*   Updated: 2025/10/13 14:43:23 by aborda           ###   ########.fr       */
+/*   Updated: 2025/10/13 15:15:22 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ typedef struct s_test_memset
 
 typedef struct s_test_bzero
 {
-	char		s[20];
+	char		*s;
 	size_t		n;
 	const char	*label;
 }	t_test_bzero;
