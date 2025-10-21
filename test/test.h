@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:47:04 by aborda            #+#    #+#             */
-/*   Updated: 2025/10/13 23:21:57 by aborda           ###   ########.fr       */
+/*   Updated: 2025/10/21 14:59:11 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,11 +88,10 @@ typedef struct s_test_memmove
 
 typedef struct s_test_strlcpy
 {
-	char		dst[20];
+	char		*dst;
 	const char	*src;
 	size_t		dsize;
-	const char	*label_return;
-	const char	*label_buffer;
+	const char	*label;
 }	t_test_strlcpy;
 
 typedef struct s_test_strlcat

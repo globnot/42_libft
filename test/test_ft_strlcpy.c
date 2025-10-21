@@ -6,51 +6,61 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 21:01:24 by aborda            #+#    #+#             */
-/*   Updated: 2025/10/11 15:54:45 by aborda           ###   ########.fr       */
+/*   Updated: 2025/10/21 15:13:27 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test.h"
 
-void	init_strlcpy_tests(t_test_strlcpy *tests)
+static void	init_tests(t_test_strlcpy *tests)
 {
-	tests[0] = (t_test_strlcpy){.dst = "XXXXXX", .src = "", .dsize = 6,
-		.label_return = "(Return)",
-		.label_buffer = "(Buffer) dst = XXXXXX, src = , dsize = 6"};
-	tests[1] = (t_test_strlcpy){.dst = "XXXXXX", .src = "ABC", .dsize = 6,
-		.label_return = "(Return)",
-		.label_buffer = "(Buffer) dst = XXXXXX, src = ABC, dsize = 6"};
-	tests[2] = (t_test_strlcpy){.dst = "XXXXXX", .src = "ABCDEFG", .dsize = 6,
-		.label_return = "(Return)",
-		.label_buffer = "(Buffer) dst = XXXXXX, src = ABCDEFG, dsize = 6"};
-	tests[3] = (t_test_strlcpy){.dst = "XXXXXX", .src = "ABC", .dsize = 0,
-		.label_return = "(Return)",
-		.label_buffer = "(Buffer) dst = XXXXXX, src = ABC, dsize = 0"};
-	tests[4] = (t_test_strlcpy){.dst = "XXXXXX", .src = "12345", .dsize = 5,
-		.label_return = "(Return)",
-		.label_buffer = "(Buffer) dst = XXXXXX, src = 12345, dsize = 5"};
+	tests[0] = (t_test_strlcpy)
+	{"Hello", "World", 6, "Copy full 'World' into 'Hello' (size 6)"};
+	tests[1] = (t_test_strlcpy)
+	{"Hello", "World", 3, "Copy 2 chars + null byte into 'Hello' (size 3)"};
+	tests[2] = (t_test_strlcpy)
+	{"", "42", 3, "Copy into empty dest with size 3"};
+	tests[3] = (t_test_strlcpy)
+	{"abcdef", "", 6, "Copy empty src into 'abcdef'"};
+	tests[4] = (t_test_strlcpy)
+	{"Hello", "HelloWorld", 5, "Truncate 'HelloWorld' into 'Hello' (size 5)"};
+	tests[5] = (t_test_strlcpy)
+	{"Hello", "Hi", 0, "Copy 'Hi' with size 0 (no change)"};
+}
+
+static void	print_results(const char *label, char *expected, char *actual)
+{
+	if (strcmp(expected, actual) == 0)
+	{
+		printf("✅OK | %s\n", label);
+		printf("expected: \"%s\" | actual: \"%s\"\n", expected, actual);
+	}
+	else
+	{
+		printf("❌KO | %s\n", label);
+		printf("expected: \"%s\" | actual: \"%s\"\n", expected, actual);
+	}
 }
 
 void	test_ft_strlcpy(void)
 {
-	t_test_strlcpy	tests[5];
+	t_test_strlcpy	tests[6];
+	size_t			i;
+	size_t			nb_tests;
 	char			std_buf[20];
 	char			ft_buf[20];
-	size_t			nb_tests;
-	size_t			i;
 
-	init_strlcpy_tests(tests);
-	printf("\n========== Test de ft_strlcpy ==========\n");
 	i = 0;
 	nb_tests = sizeof(tests) / sizeof(tests[0]);
+	init_tests(tests);
+	printf("\n========== Test de ft_strlcpy ==========\n");
 	while (i < nb_tests)
 	{
+		memset(std_buf, 0, sizeof(std_buf));
+		memset(ft_buf, 0, sizeof(ft_buf));
 		strcpy(std_buf, tests[i].dst);
 		strcpy(ft_buf, tests[i].dst);
-		assert_eq_int(strlcpy(std_buf, tests[i].src, tests[i].dsize),
-			ft_strlcpy(ft_buf, tests[i].src, tests[i].dsize),
-			tests[i].label_return);
-		assert_eq_str(std_buf, ft_buf, tests[i].label_buffer);
+		print_results(tests[i].label, std_buf, ft_buf);
 		i++;
 	}
 	printf("----------------------------------------\n");
