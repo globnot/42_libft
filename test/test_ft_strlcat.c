@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 21:01:24 by aborda            #+#    #+#             */
-/*   Updated: 2025/10/21 16:55:04 by aborda           ###   ########.fr       */
+/*   Updated: 2025/10/21 17:08:55 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,18 @@ static void	init_tests(t_test_strlcat *tests)
 	{"Hello", "", 5, "Copy empty src into 'Hello' (buffer 5)"};
 }
 
-static void print_results(const char *label, char *expected, char *actual, size_t actual_ret)
+static void	print_results(const char *label, char *expected, char *actual)
 {
-    if (strcmp(expected, actual) == 0)
-    {
-        printf("✅OK | %s\n", label);
-        printf("expected: \"%s\" | actual: \"%s\"\n", expected, actual);
-        printf("return: %zu\n", actual_ret);
-    }
-    else
-    {
-        printf("❌KO | %s\n", label);
-        printf("expected: \"%s\" | actual: \"%s\"\n", expected, actual);
-        printf("return: %zu\n", actual_ret);
-    }
+	if (strcmp(expected, actual) == 0)
+	{
+		printf("✅OK | %s\n", label);
+		printf("expected: \"%s\" | actual: \"%s\"\n", expected, actual);
+	}
+	else
+	{
+		printf("❌KO | %s\n", label);
+		printf("expected: \"%s\" | actual: \"%s\"\n", expected, actual);
+	}
 }
 
 void	test_ft_strlcat(void)
@@ -58,11 +56,9 @@ void	test_ft_strlcat(void)
 		memset(ft_buf, 0, sizeof(ft_buf));
 		strcpy(std_buf, tests[i].dst);
 		strcpy(ft_buf, tests[i].dst);
-
-		size_t ret = ft_strlcat(ft_buf, tests[i].src, tests[i].dsize);
 		strlcat(std_buf, tests[i].src, tests[i].dsize);
-
-		print_results(tests[i].label, std_buf, ft_buf, ret);
+		strlcat(ft_buf, tests[i].src, tests[i].dsize);
+		print_results(tests[i].label, std_buf, ft_buf);
 		i++;
 	}
 	printf("----------------------------------------\n");

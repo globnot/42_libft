@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:47:04 by aborda            #+#    #+#             */
-/*   Updated: 2025/10/21 16:19:02 by aborda           ###   ########.fr       */
+/*   Updated: 2025/10/21 17:00:16 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,12 @@ typedef struct s_test_strlcat
 	size_t		dsize;
 	const char	*label;
 }	t_test_strlcat;
+
+typedef struct s_test_toupper
+{
+	int			c;
+	const char	*label;
+}	t_test_toupper;
 
 typedef struct s_test_strchr
 {
