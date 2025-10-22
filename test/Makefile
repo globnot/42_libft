@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/04 18:18:52 by aborda            #+#    #+#              #
-#    Updated: 2025/08/05 18:28:13 by aborda           ###   ########.fr        #
+#    Updated: 2025/10/22 11:12:45 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,6 @@ LDFLAGS = 	-L.. -lft
 #  -lft demande a lier la library libft.a
 
 SRC = 		$(wildcard *.c)
-SRC += 		$(wildcard assert/*.c)
 OBJ = 		$(SRC:.c=.o)
 
 all: 		$(NAME)
