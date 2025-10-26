@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:47:04 by aborda            #+#    #+#             */
-/*   Updated: 2025/10/22 10:54:47 by aborda           ###   ########.fr       */
+/*   Updated: 2025/10/26 14:30:29 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,13 @@ typedef struct s_test_strchr
 	const char	*label;
 }	t_test_strchr;
 
+typedef struct s_test_strrchr
+{
+	const char	*s;
+	int			c;
+	const char	*label;
+}	t_test_strrchr;
+
 typedef struct s_test_atoi
 {
 	const char	*s;
@@ -142,6 +149,7 @@ void	test_ft_strlcat(void);
 void	test_ft_toupper(void);
 void	test_ft_tolower(void);
 void	test_ft_strchr(void);
+void	test_ft_strrchr(void);
 void	test_ft_atoi(void);
 
 #endif
