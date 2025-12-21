@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 13:23:19 by aborda            #+#    #+#             */
-/*   Updated: 2025/11/13 16:55:38 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/21 11:12:12 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_count_digits(int n)
 {
 	size_t	count;
 
-	if (n == -2147483648)
+	if (n == INT_MIN)
 		return (10);
 	if (n < 0)
 		n = -n;
