@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -76,5 +77,8 @@ int			ft_intlen(int d);
 int			ft_longlen(long d);
 int			ft_unsignedint_len(unsigned int d);
 void		ft_putunsignedint_fd(unsigned int n, int fd);
+
+// FT_PRINTF
+int			ft_printf(const char *format, ...);
 
 #endif

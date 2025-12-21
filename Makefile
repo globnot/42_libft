@@ -12,7 +12,7 @@
 
 NAME = libft.a
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I.
+CFLAGS = -Wall -Wextra -Werror -Iincludes
 
 SRC_LIBC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
            ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c \
@@ -31,7 +31,15 @@ SRC_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 SRC_PERSO = ft_intlen.c ft_longlen.c ft_unsignedint_len.c \
 			ft_putunsignedint_fd.c
 
-SRCS = $(SRC_LIBC) $(SRC_ADD) $(SRC_PERSO)
+SRC_PRINTF = srcs/ft_printf/ft_printf.c srcs/ft_printf/ft_print_char.c \
+			srcs/ft_printf/ft_print_str.c srcs/ft_printf/ft_print_pointer.c \
+			srcs/ft_printf/ft_print_decimal.c \
+			srcs/ft_printf/ft_print_unsigned_decimal.c \
+			srcs/ft_printf/ft_print_hexalower.c \
+			srcs/ft_printf/ft_print_hexaupper.c \
+			srcs/ft_printf/ft_print_percent.c
+
+SRCS = $(SRC_LIBC) $(SRC_ADD) $(SRC_PERSO) $(SRC_PRINTF)
 SRCS_ALL = $(SRCS) $(SRC_BONUS)
 
 OBJS = $(SRCS:.c=.o)
