@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 18:45:41 by aborda            #+#    #+#             */
-/*   Updated: 2025/11/20 10:30:17 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/21 09:45:40 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,6 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 // PERSO
 int			ft_intlen(long d);
 int			ft_unsignedint_len(unsigned int d);
-void		ft_putunsignedint_fd(unsigned int n, unsigned int fd);
+void		ft_putunsignedint_fd(unsigned int n, int fd);
 
 #endif
