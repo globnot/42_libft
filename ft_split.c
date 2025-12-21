@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 17:06:10 by aborda            #+#    #+#             */
-/*   Updated: 2025/11/14 12:34:01 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/21 10:58:34 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ char	**ft_split(char const *s, char c)
 	size_t	start;
 	char	**strings;
 
+	if (s == NULL)
+		return (NULL);
 	strings = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
 	if (!strings)
 		return (NULL);
