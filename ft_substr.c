@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 09:42:50 by aborda            #+#    #+#             */
-/*   Updated: 2025/11/11 10:19:37 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/21 09:42:25 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*substr;
 	size_t	i;
 
-	size = ft_strlen(s) - start;
+	if (s == NULL)
+		return (NULL);
 	if (start >= ft_strlen(s))
 		size = 0;
+	else
+		size = ft_strlen(s) - start;
 	if (size > len)
 		size = len;
 	substr = malloc(sizeof(char) * (size + 1));
