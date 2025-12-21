@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intlen.c                                        :+:      :+:    :+:   */
+/*   ft_longlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 09:59:01 by aborda            #+#    #+#             */
-/*   Updated: 2025/12/21 10:34:21 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/21 10:32:43 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_intlen(int d)
+int	ft_longlen(long d)
 {
-	int		d_base;
+	long	d_base;
 	size_t	i;
 
 	d_base = d;
 	i = 1;
-	if (d == INT_MIN)
-		return (11);
+	if (d == LONG_MIN)
+		return (20);
 	if (d < 0)
 		d = -d;
 	while (d >= 10)
