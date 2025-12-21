@@ -13,7 +13,7 @@
 #ifndef TESTS_H
 # define TESTS_H
 
-# include "ft_printf.h"
+# include "../../../includes/libft.h"
 # include <stdio.h>
 
 void tests_ft_print_char(void);
