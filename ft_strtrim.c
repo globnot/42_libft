@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 13:52:09 by aborda            #+#    #+#             */
-/*   Updated: 2025/11/14 10:41:49 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/21 10:06:30 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,14 @@ size_t	ft_calc_len(int start, int end)
 	return (len);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+static char	*ft_malloc_and_copy(char const *s1, size_t start_set,
+								size_t end_set)
 {
 	size_t	i;
-	size_t	start_set;
-	size_t	end_set;
 	char	*str;
 
-	start_set = 0;
-	end_set = ft_strlen(s1) - 1;
-	while (s1[start_set] && ft_check_set(s1[start_set], set) == 1)
-		start_set++;
-	while (end_set > start_set && ft_check_set(s1[end_set], set) == 1)
-		end_set--;
-	if (s1[0] == '\0')
-		return (ft_strdup(""));
-	else
-		str = malloc(sizeof(char) * (ft_calc_len(start_set, end_set) + 1));
-	if (!str)
+	str = malloc(sizeof(char) * (ft_calc_len(start_set, end_set) + 1));
+	if (str == NULL)
 		return (NULL);
 	i = 0;
 	while (start_set <= end_set)
@@ -63,5 +53,26 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start_set++;
 	}
 	str[i] = '\0';
+	return (str);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	start_set;
+	size_t	end_set;
+	char	*str;
+
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	start_set = 0;
+	if (s1[0] == '\0')
+		return (ft_strdup(""));
+	else
+		end_set = ft_strlen(s1) - 1;
+	while (s1[start_set] && ft_check_set(s1[start_set], set) == 1)
+		start_set++;
+	while (end_set > start_set && ft_check_set(s1[end_set], set) == 1)
+		end_set--;
+	str = ft_malloc_and_copy(s1, start_set, end_set);
 	return (str);
 }
