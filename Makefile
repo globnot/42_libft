@@ -3,35 +3,64 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: student <student@student.42.fr>            +#+  +:+       +#+         #
+#    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/15 10:00:00 by student           #+#    #+#              #
-#    Updated: 2025/12/21 10:36:40 by aborda           ###   ########.fr        #
+#    Updated: 2025/12/21 12:24:01 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
-CC = cc
-CFLAGS = -Wall -Wextra -Werror -Iincludes
+# Colors
+RED			= \033[0;31m
+GREEN		= \033[0;32m
+YELLOW		= \033[0;33m
+BLUE		= \033[0;34m
+MAGENTA		= \033[0;35m
+CYAN		= \033[0;36m
+RESET		= \033[0m
 
-SRC_LIBC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
-           ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c \
-           ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_toupper.c \
-           ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c \
-           ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c
+# Project
+NAME		= libft.a
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror
+INCLUDES	= -Iincludes
 
-SRC_ADD = ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
-          ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
-          ft_putendl_fd.c ft_putnbr_fd.c
+# Directories
+OBJ_DIR		= objs
 
-SRC_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
-			ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
-			ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+# vpath for source files
+vpath %.c srcs/libft srcs/ft_printf
 
-SRC_PERSO = ft_intlen.c ft_longlen.c ft_unsignedint_len.c \
-			ft_putunsignedint_fd.c
+# Sources
+SRC_LIBC	= srcs/libft/ft_isalpha.c srcs/libft/ft_isdigit.c \
+			srcs/libft/ft_isalnum.c srcs/libft/ft_isascii.c \
+			srcs/libft/ft_isprint.c srcs/libft/ft_strlen.c \
+			srcs/libft/ft_memset.c srcs/libft/ft_bzero.c \
+			srcs/libft/ft_memcpy.c srcs/libft/ft_memmove.c \
+			srcs/libft/ft_strlcpy.c srcs/libft/ft_strlcat.c \
+			srcs/libft/ft_toupper.c srcs/libft/ft_tolower.c \
+			srcs/libft/ft_strchr.c srcs/libft/ft_strrchr.c \
+			srcs/libft/ft_strncmp.c srcs/libft/ft_memchr.c \
+			srcs/libft/ft_memcmp.c srcs/libft/ft_strnstr.c \
+			srcs/libft/ft_atoi.c srcs/libft/ft_calloc.c srcs/libft/ft_strdup.c
 
-SRC_PRINTF = srcs/ft_printf/ft_printf.c srcs/ft_printf/ft_print_char.c \
+SRC_ADD		= srcs/libft/ft_substr.c srcs/libft/ft_strjoin.c \
+			srcs/libft/ft_strtrim.c srcs/libft/ft_split.c \
+			srcs/libft/ft_itoa.c srcs/libft/ft_strmapi.c \
+			srcs/libft/ft_striteri.c srcs/libft/ft_putchar_fd.c \
+			srcs/libft/ft_putstr_fd.c srcs/libft/ft_putendl_fd.c \
+			srcs/libft/ft_putnbr_fd.c
+
+SRC_BONUS	= srcs/libft/ft_lstnew_bonus.c srcs/libft/ft_lstadd_front_bonus.c \
+			srcs/libft/ft_lstsize_bonus.c srcs/libft/ft_lstlast_bonus.c \
+			srcs/libft/ft_lstadd_back_bonus.c srcs/libft/ft_lstdelone_bonus.c \
+			srcs/libft/ft_lstclear_bonus.c srcs/libft/ft_lstiter_bonus.c \
+			srcs/libft/ft_lstmap_bonus.c
+
+SRC_PERSO	= srcs/libft/ft_intlen.c srcs/libft/ft_longlen.c \
+			srcs/libft/ft_unsignedint_len.c srcs/libft/ft_putunsignedint_fd.c
+
+SRC_PRINTF	= srcs/ft_printf/ft_printf.c srcs/ft_printf/ft_print_char.c \
 			srcs/ft_printf/ft_print_str.c srcs/ft_printf/ft_print_pointer.c \
 			srcs/ft_printf/ft_print_decimal.c \
 			srcs/ft_printf/ft_print_unsigned_decimal.c \
@@ -39,28 +68,40 @@ SRC_PRINTF = srcs/ft_printf/ft_printf.c srcs/ft_printf/ft_print_char.c \
 			srcs/ft_printf/ft_print_hexaupper.c \
 			srcs/ft_printf/ft_print_percent.c
 
-SRCS = $(SRC_LIBC) $(SRC_ADD) $(SRC_PERSO) $(SRC_PRINTF)
-SRCS_ALL = $(SRCS) $(SRC_BONUS)
+SRCS		= $(SRC_LIBC) $(SRC_ADD) $(SRC_PERSO) $(SRC_PRINTF)
+SRCS_ALL	= $(SRCS) $(SRC_BONUS)
 
-OBJS = $(SRCS:.c=.o)
-OBJS_ALL = $(SRCS_ALL:.c=.o)
+# Objects
+OBJS		= $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
+OBJS_ALL	= $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS_ALL:.c=.o)))
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
-
+# Rules
 all: $(NAME)
 
+$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@echo "$(GREEN)✓$(RESET) Compiled: $(CYAN)$<$(RESET)"
+
+$(NAME): $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
+	@echo "$(GREEN)==========================================$(RESET)"
+	@echo "$(GREEN)✓ $(NAME) created successfully!$(RESET)"
+	@echo "$(GREEN)==========================================$(RESET)"
+
 bonus: $(OBJS_ALL)
-	ar rcs $(NAME) $(OBJS_ALL)
+	@ar rcs $(NAME) $(OBJS_ALL)
+	@echo "$(GREEN)==========================================$(RESET)"
+	@echo "$(GREEN)✓ $(NAME) created with bonus!$(RESET)"
+	@echo "$(GREEN)==========================================$(RESET)"
 
 clean:
-	rm -f $(OBJS) $(OBJS_ALL)
+	@rm -rf $(OBJ_DIR)
+	@echo "$(YELLOW)✓ Object files removed$(RESET)"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "$(YELLOW)✓ $(NAME) removed$(RESET)"
 
 re: fclean all
 
