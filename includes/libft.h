@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 18:45:41 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/03 09:24:30 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/21 14:12:44 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,8 @@ long		ft_atol(const char *s);
 
 // FT_PRINTF
 int			ft_printf(const char *format, ...);
+
+// GET_NEXT_LINE
+char		*get_next_line(int fd);
 
 #endif
