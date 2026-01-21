@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/15 10:00:00 by student           #+#    #+#              #
-#    Updated: 2026/01/17 12:01:28 by aborda           ###   ########.fr        #
+#    Updated: 2026/01/21 11:38:00 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,10 @@ SRC_PRINTF	= srcs/ft_printf/ft_printf.c srcs/ft_printf/ft_print_char.c \
 			srcs/ft_printf/ft_print_hexaupper.c \
 			srcs/ft_printf/ft_print_percent.c
 
-SRCS		= $(SRC_LIBC) $(SRC_ADD) $(SRC_PERSO) $(SRC_PRINTF) $(SRC_BONUS)
+SRC_GNL		= srcs/get_next_line/get_next_line_bonus.c \
+			srcs/get_next_line/get_next_line_utils_bonus.c
+
+SRCS		= $(SRC_LIBC) $(SRC_ADD) $(SRC_PERSO) $(SRC_PRINTF) $(SRC_BONUS) $(SRC_GNL)
 
 # Objects
 OBJS		= $(SRCS:srcs/%.c=$(OBJ_DIR)/%.o)
