@@ -29,46 +29,72 @@ INCLUDES	= -Iincludes
 OBJ_DIR		= objs
 
 # Sources
-SRC_LIBC	= srcs/libft/ft_isalpha.c srcs/libft/ft_isdigit.c \
-			srcs/libft/ft_isalnum.c srcs/libft/ft_isascii.c \
-			srcs/libft/ft_isprint.c srcs/libft/ft_strlen.c \
-			srcs/libft/ft_memset.c srcs/libft/ft_bzero.c \
-			srcs/libft/ft_memcpy.c srcs/libft/ft_memmove.c \
-			srcs/libft/ft_strlcpy.c srcs/libft/ft_strlcat.c \
-			srcs/libft/ft_toupper.c srcs/libft/ft_tolower.c \
-			srcs/libft/ft_strchr.c srcs/libft/ft_strrchr.c \
-			srcs/libft/ft_strncmp.c srcs/libft/ft_memchr.c \
-			srcs/libft/ft_memcmp.c srcs/libft/ft_strnstr.c \
-			srcs/libft/ft_atoi.c srcs/libft/ft_calloc.c srcs/libft/ft_strdup.c
+SRC_LIBC	= srcs/libft/ft_isalpha.c \
+			  srcs/libft/ft_isdigit.c \
+			  srcs/libft/ft_isalnum.c \
+			  srcs/libft/ft_isascii.c \
+			  srcs/libft/ft_isprint.c \
+			  srcs/libft/ft_strlen.c \
+			  srcs/libft/ft_memset.c \
+			  srcs/libft/ft_bzero.c \
+			  srcs/libft/ft_memcpy.c \
+			  srcs/libft/ft_memmove.c \
+			  srcs/libft/ft_strlcpy.c \
+			  srcs/libft/ft_strlcat.c \
+			  srcs/libft/ft_toupper.c \
+			  srcs/libft/ft_tolower.c \
+			  srcs/libft/ft_strchr.c \
+			  srcs/libft/ft_strrchr.c \
+			  srcs/libft/ft_strncmp.c \
+			  srcs/libft/ft_memchr.c \
+			  srcs/libft/ft_memcmp.c \
+			  srcs/libft/ft_strnstr.c \
+			  srcs/libft/ft_atoi.c \
+			  srcs/libft/ft_calloc.c \
+			  srcs/libft/ft_strdup.c
 
-SRC_ADD		= srcs/libft/ft_substr.c srcs/libft/ft_strjoin.c \
-			srcs/libft/ft_strtrim.c srcs/libft/ft_split.c \
-			srcs/libft/ft_itoa.c srcs/libft/ft_strmapi.c \
-			srcs/libft/ft_striteri.c srcs/libft/ft_putchar_fd.c \
-			srcs/libft/ft_putstr_fd.c srcs/libft/ft_putendl_fd.c \
-			srcs/libft/ft_putnbr_fd.c
+SRC_ADD		= srcs/libft/ft_substr.c \
+			  srcs/libft/ft_strjoin.c \
+			  srcs/libft/ft_strtrim.c \
+			  srcs/libft/ft_split.c \
+			  srcs/libft/ft_itoa.c \
+			  srcs/libft/ft_strmapi.c \
+			  srcs/libft/ft_striteri.c \
+			  srcs/libft/ft_putchar_fd.c \
+			  srcs/libft/ft_putstr_fd.c \
+			  srcs/libft/ft_putendl_fd.c \
+			  srcs/libft/ft_putnbr_fd.c
 
-SRC_BONUS	= srcs/libft/ft_lstnew_bonus.c srcs/libft/ft_lstadd_front_bonus.c \
-			srcs/libft/ft_lstsize_bonus.c srcs/libft/ft_lstlast_bonus.c \
-			srcs/libft/ft_lstadd_back_bonus.c srcs/libft/ft_lstdelone_bonus.c \
-			srcs/libft/ft_lstclear_bonus.c srcs/libft/ft_lstiter_bonus.c \
-			srcs/libft/ft_lstmap_bonus.c
+SRC_BONUS	= srcs/libft/ft_lstnew_bonus.c \
+			  srcs/libft/ft_lstadd_front_bonus.c \
+			  srcs/libft/ft_lstsize_bonus.c \
+			  srcs/libft/ft_lstlast_bonus.c \
+			  srcs/libft/ft_lstadd_back_bonus.c \
+			  srcs/libft/ft_lstdelone_bonus.c \
+			  srcs/libft/ft_lstclear_bonus.c \
+			  srcs/libft/ft_lstiter_bonus.c \
+			  srcs/libft/ft_lstmap_bonus.c
 
-SRC_PERSO	= srcs/libft/ft_intlen.c srcs/libft/ft_longlen.c \
-			srcs/libft/ft_unsignedint_len.c srcs/libft/ft_putunsignedint_fd.c \
-			srcs/libft/ft_isspace.c srcs/libft/ft_is_valid_int.c \
-			srcs/libft/ft_atol.c
+SRC_PERSO	= srcs/libft/ft_intlen.c \
+			  srcs/libft/ft_longlen.c \
+			  srcs/libft/ft_unsignedint_len.c \
+			  srcs/libft/ft_putunsignedint_fd.c \
+			  srcs/libft/ft_isspace.c \
+			  srcs/libft/ft_is_valid_int.c \
+			  srcs/libft/ft_atol.c
 
-SRC_PRINTF	= srcs/ft_printf/ft_printf.c srcs/ft_printf/ft_print_char.c \
-			srcs/ft_printf/ft_print_str.c srcs/ft_printf/ft_print_pointer.c \
-			srcs/ft_printf/ft_print_decimal.c \
-			srcs/ft_printf/ft_print_unsigned_decimal.c \
-			srcs/ft_printf/ft_print_hexalower.c \
-			srcs/ft_printf/ft_print_hexaupper.c \
-			srcs/ft_printf/ft_print_percent.c
+SRC_PRINTF	= srcs/ft_printf/ft_printf.c \
+			  srcs/ft_printf/ft_print_char.c \
+			  srcs/ft_printf/ft_print_str.c \
+			  srcs/ft_printf/ft_print_pointer.c \
+			  srcs/ft_printf/ft_print_decimal.c \
+			  srcs/ft_printf/ft_print_unsigned_decimal.c \
+			  srcs/ft_printf/ft_print_hexalower.c \
+			  srcs/ft_printf/ft_print_hexaupper.c \
+			  srcs/ft_printf/ft_print_percent.c
 
 SRC_GNL		= srcs/get_next_line/get_next_line_bonus.c \
-			srcs/get_next_line/get_next_line_utils_bonus.c
+			  srcs/get_next_line/get_next_line_utils_bonus.c
 
 SRCS		= $(SRC_LIBC) $(SRC_ADD) $(SRC_PERSO) $(SRC_PRINTF) $(SRC_BONUS) $(SRC_GNL)
 
