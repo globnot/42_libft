@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 11:17:03 by aborda            #+#    #+#             */
-/*   Updated: 2025/11/19 16:11:13 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/09 14:39:28 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "libft.h"
 
 int		ft_printf(const char *format, ...);
-
 int		ft_print_char(va_list args, int len);
 int		ft_print_str(va_list args, int len);
 int		ft_print_pointer(va_list args, int len);
