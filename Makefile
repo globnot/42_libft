@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/15 10:00:00 by student           #+#    #+#              #
-#    Updated: 2026/01/21 11:38:00 by aborda           ###   ########.fr        #
+#    Updated: 2026/06/18 09:26:42 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,21 +107,21 @@ all: $(NAME)
 $(OBJ_DIR)/%.o: srcs/%.c
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-	@echo "$(GREEN)✓$(RESET) Compiled: $(CYAN)$<$(RESET)"
+	@printf "$(GREEN)✓$(RESET) Compiled: $(CYAN)$<$(RESET)\n"
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@echo "$(GREEN)==========================================$(RESET)"
-	@echo "$(GREEN)✓ $(NAME) created successfully!$(RESET)"
-	@echo "$(GREEN)==========================================$(RESET)"
+	@printf "$(GREEN)==========================================$(RESET)\n"
+	@printf "$(GREEN)✓ $(NAME) created successfully!$(RESET)\n"
+	@printf "$(GREEN)==========================================$(RESET)\n"
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@echo "$(YELLOW)✓ $(NAME) Object files removed$(RESET)"
+	@printf "$(YELLOW)✓ $(NAME) Object files removed$(RESET)\n"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(YELLOW)✓ $(NAME) removed$(RESET)"
+	@printf "$(YELLOW)✓ $(NAME) removed$(RESET)\n"
 
 re: fclean all
 
